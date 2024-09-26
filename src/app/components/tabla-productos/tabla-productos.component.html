@@ -1,0 +1,37 @@
+<h1>Bienvenido a Dolce & Gabbana</h1>
+<p>
+  Dolce & Gabbana es sinónimo de lujo, estilo y elegancia. Ofrecemos una amplia gama de productos de moda que van desde ropa icónica y accesorios hasta fragancias exclusivas.
+  Nuestra visión creativa combina lo clásico con lo moderno para aquellos que buscan destacar en cada ocasión.
+</p>
+<h2>¿Qué ofrecemos?</h2>
+
+<nav class="container">
+  <h1>Búsqueda por color</h1>
+  <select name="" id="" [(ngModel)]="busqueda">
+      <option value="Vino">Vino</option>
+      <option value="Negro">Negro</option>
+      <option value="Azul">Azul</option>
+      <option value="Marrón">Marrón</option>
+      <option value="Multicolor">Multicolor</option>
+      <option value="Azul marino">Azul marino</option>
+    </select>
+
+    @for (item of ropa; track item) {
+      @if (item.anio == anio) {
+           <div class="container ">
+          <div class="card" style="width:400px">
+              <img class="card-img-top" src="{{item.imagen}}" alt="Card image">
+              <div class="card-body">
+                      <p class="card-text">Precio: ${{ item.precio }}</p>
+                      <p class="card-text">Talla: {{ item.talla }}</p>
+                      <p class="card-text">Material: {{ item.material }}</p>
+                      <button class="btn btn-primary" [routerLink]="['/detalles', item.id]">Ver más detalles</button>
+                    </div>
+                  </div>
+              </div>
+            }
+
+        }
+      </nav>
+
+

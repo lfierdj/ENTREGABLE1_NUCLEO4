@@ -1,0 +1,94 @@
+{
+  "ropa": [
+    {
+      "id": "DG-101",
+      "nombre": "Blusa de Seda",
+      "precio": "1.126.000",
+      "color": "Vino",
+      "talla": "M",
+      "material": "Seda",
+      "imagen": "https://cdn-images.farfetch-contents.com/20/96/88/83/20968883_51042858_600.jpg"
+    },
+    {
+      "id": "DG-102",
+      "nombre": "Pantalones de Terciopelo",
+      "precio": "1.109.000",
+      "color": "Negro",
+      "talla": "L",
+      "material": "Terciopelo",
+      "imagen": "https://cdn-images.farfetch-contents.com/20/23/71/69/20237169_51588875_600.jpg"
+    },
+    {
+      "id": "DG-103",
+      "nombre": "Vestido Estampado",
+      "precio": "1.996.103",
+      "color": "Azul",
+      "talla": "S",
+      "material": "Algodón",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5OGAjurk2Ld74hWxGXlGdkoytVdCPZjLdOQ&s"
+    },
+    {
+      "id": "DG-104",
+      "nombre": "Chaqueta de Cuero",
+      "precio": "2.810.100",
+      "color": "Marrón",
+      "talla": "XL",
+      "material": "Cuero",
+      "imagen": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dwe0662ff9/images/zoom/G9BEDLHULUC_V0399_0.jpg"
+    },
+    {
+      "id": "DG-105",
+      "nombre": "Falda Larga",
+      "precio": "12.210.00",
+      "color": "Estampado transparente",
+      "talla": "M",
+      "material": "Seda",
+      "imagen": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dw802248a6/images/zoom/F4CZITHLM6T_N0000_0.jpg"
+    },
+    {
+      "id": "DG-106",
+      "nombre": "Abrigo con Botones",
+      "precio": "1.891.000",
+      "color": "Beige",
+      "talla": "L",
+      "material": "Lana",
+      "imagen": "https://cdn-images.farfetch-contents.com/18/66/65/22/18666522_40526016_600.jpg"
+    },
+    {
+      "id": "DG-107",
+      "nombre": "Camiseta Básica",
+      "precio": "395",
+      "color": "Negro",
+      "talla": "M",
+      "material": "Algodón",
+      "imagen": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dw6b43e0c8/images/zoom/G8QI4TFU7EQ_N0000_0.jpg?sw=740&sh=944"
+    },
+    {
+      "id": "DG-108",
+      "nombre": "Traje de Lana",
+      "precio": "2.950.000",
+      "color": "Gris",
+      "talla": "XL",
+      "material": "Lana",
+      "imagen": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dw77a66a26/images/zoom/GK0RMTFURM7_N0040_0.jpg?sw=740&sh=944"
+    },
+    {
+      "id": "DG-109",
+      "nombre": "Suéter de Cashmere",
+      "precio": "960.250",
+      "color": "Multicolor",
+      "talla": "M",
+      "material": "Cashmere",
+      "imagen": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dwbff05233/images/zoom/FX459TJAHGB_HY13M_0.jpg?sw=740&sh=944"
+    },
+    {
+      "id": "DG-110",
+      "nombre": "Chaqueta Deportiva",
+      "precio": "1.048.000",
+      "color": "Azul marino",
+      "talla": "L",
+      "material": "Poliéster",
+      "imagen": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dwe4870e70/images/zoom/G9AHBTFUMQ7_B3895_0.jpg?sw=740&sh=944"
+    }
+  ]
+}
