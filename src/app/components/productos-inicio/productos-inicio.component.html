@@ -1,0 +1,33 @@
+<h1>Bienvenido a Dolce & Gabbana</h1>
+<p class="intro-text">
+  Dolce & Gabbana es sinónimo de lujo, estilo y elegancia. Ofrecemos una amplia gama de productos de moda que van desde ropa icónica y accesorios hasta fragancias exclusivas.
+  Nuestra visión creativa combina lo clásico con lo moderno para aquellos que buscan destacar en cada ocasión.
+</p>
+<h2>¿Qué ofrecemos?</h2>
+
+
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+
+  <div class="carousel-inner">
+    @for (item of ropa; track item) {
+      <div class="carousel-item" [class.active]="item === ropa[0]">
+        <img src="{{ item.imagen }}" alt="{{ item.talla }}" class="d-block mx-auto" width="500px">
+        <div class="carousel-caption">
+          <p class="card-text">Precio: ${{ item.precio }}</p>
+          <p class="card-text">Talla: {{ item.talla }}</p>
+          <p class="card-text">Material: {{ item.material }}</p>
+          <button class="btn btn-primary" [routerLink]="['/detalles', item.id]">Ver más detalles</button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" style="background-color: black;"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon" style="background-color: black;"></span>
+  </button>
+</div>

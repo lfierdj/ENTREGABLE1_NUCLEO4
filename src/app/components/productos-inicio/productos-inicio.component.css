@@ -1,0 +1,68 @@
+/* Títulos y Texto Introducción */
+h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 48px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+h2 {
+  font-family: 'Times New Roman', serif;
+  font-size: 48px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.intro-text {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 20px 40px; /* Espacio lateral para que no toque los bordes */
+  color: #555;
+}
+
+/* Estilos del Carrusel */
+.carousel-item {
+  text-align: center; /* Centra el contenido del carrusel */
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.card-text {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.btn-primary {
+  background-color: #ac78ac; /* Color del botón */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #933f93; /* Color del botón al pasar el ratón */
+}
+
+/* Ajustes para el Carrusel en Dispositivos Móviles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .carousel-caption {
+    font-size: 14px; /* Ajustar tamaño de fuente para móviles */
+  }
+}

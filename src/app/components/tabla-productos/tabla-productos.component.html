@@ -1,37 +1,56 @@
-<h1>Bienvenido a Dolce & Gabbana</h1>
-<p>
-  Dolce & Gabbana es sinónimo de lujo, estilo y elegancia. Ofrecemos una amplia gama de productos de moda que van desde ropa icónica y accesorios hasta fragancias exclusivas.
-  Nuestra visión creativa combina lo clásico con lo moderno para aquellos que buscan destacar en cada ocasión.
-</p>
-<h2>¿Qué ofrecemos?</h2>
+<button class="btn btn-secondary" (click)="cambiarModo()">Cambiar Modo</button>
 
-<nav class="container">
-  <h1>Búsqueda por color</h1>
+<h1>Búsqueda por color</h1>
+
+
+<div class="filter-section">
   <select name="" id="" [(ngModel)]="busqueda">
-      <option value="Vino">Vino</option>
-      <option value="Negro">Negro</option>
-      <option value="Azul">Azul</option>
-      <option value="Marrón">Marrón</option>
-      <option value="Multicolor">Multicolor</option>
-      <option value="Azul marino">Azul marino</option>
-    </select>
-
-    @for (item of ropa; track item) {
-      @if (item.anio == anio) {
-           <div class="container ">
-          <div class="card" style="width:400px">
-              <img class="card-img-top" src="{{item.imagen}}" alt="Card image">
-              <div class="card-body">
-                      <p class="card-text">Precio: ${{ item.precio }}</p>
-                      <p class="card-text">Talla: {{ item.talla }}</p>
-                      <p class="card-text">Material: {{ item.material }}</p>
-                      <button class="btn btn-primary" [routerLink]="['/detalles', item.id]">Ver más detalles</button>
-                    </div>
-                  </div>
-              </div>
-            }
-
-        }
-      </nav>
+    <option value="">Todos los colores</option>
+    <option value="Vino">Vino</option>
+    <option value="Negro">Negro</option>
+    <option value="Azul">Azul</option>
+    <option value="Marrón">Marrón</option>
+    <option value="Multicolor">Multicolor</option>
+    <option value="Azul marino">Azul marino</option>
+  </select>
+</div>
 
 
+  @if (vistaGaleria) {
+    <div class="card-container">
+      @for (item of filtrarPorColor(ropa, busqueda); track item) {
+        <div class="card" [ngClass]="{ 'modo-nocturno': modoNocturno }">
+          <img class="card-img-top" src="{{ item.imagen }}" alt="Card image">
+          <div class="card-body">
+            <p class="card-text">{{ modoEspanol ? 'Precio' : 'Price' }}: ${{ item.precio }}</p>
+            <p class="card-text">{{ modoEspanol ? 'Talla' : 'Size' }}: {{ item.talla }}</p>
+            <p class="card-text">{{ modoEspanol ? 'Material' : 'Material' }}: {{ item.material }}</p>
+            <button class="btn btn-primary" [routerLink]="['/detalles', item.id]">{{ modoEspanol ? 'Ver más detalles' : 'See details' }}</button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+
+<ng-template #tablaView>
+  <table class="table" [ngClass]="{ 'modo-nocturno': modoNocturno }">
+    <thead>
+      <tr>
+        <th>{{ modoEspanol ? 'Imagen' : 'Image' }}</th>
+        <th>{{ modoEspanol ? 'Precio' : 'Price' }}</th>
+        <th>{{ modoEspanol ? 'Talla' : 'Size' }}</th>
+        <th>{{ modoEspanol ? 'Material' : 'Material' }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filtrarPorColor(ropa, busqueda); trackBy: trackByFn">
+        <td><img src="{{item.imagen}}" alt="Imagen" style="width: 100px;"></td>
+        <td>${{ item.precio }}</td>
+        <td>{{ item.talla }}</td>
+        <td>{{ item.material }}</td>
+        <td><button class="btn btn-primary" [routerLink]="['/detalles', item.id]">{{ modoEspanol ? 'Ver más detalles' : 'See details' }}</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

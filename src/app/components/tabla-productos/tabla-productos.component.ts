@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tabla-productos',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, CommonModule],
   templateUrl: './tabla-productos.component.html',
   styleUrl: './tabla-productos.component.css'
 })
@@ -15,6 +16,10 @@ export class TablaProductosComponent {
 
   ropa: any;
   anio = "";
+
+  modoNocturno: boolean = false;
+  vistaGaleria: boolean = true;
+  modoEspanol: boolean = true;
 
   ngOnInit() {
     this.servicio.getRopa().subscribe((data) => {
@@ -28,5 +33,22 @@ export class TablaProductosComponent {
   }
 
   busqueda: any;
+  cambiarModo() {
+    // Alternar entre modos
+    this.modoNocturno = !this.modoNocturno;
+    this.vistaGaleria = !this.vistaGaleria;
+    this.modoEspanol = !this.modoEspanol;
+  }
+   // Filtro personalizado por color
+   filtrarPorColor(ropa: any[], color: string): any[] {
+    if (!ropa || !color) {
+      return ropa; // Si no hay color seleccionado, mostrar todos los productos
+    }
+    return ropa.filter(item => item.color.toLowerCase() === color.toLowerCase());
+  }
+   // Función para el trackBy en el ngFor (mejora el rendimiento)
+   trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }
 

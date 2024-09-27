@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { TablaProductosComponent } from "../../components/tabla-productos/tabla-productos.component";
+import { ProductosInicioComponent } from "../../components/productos-inicio/productos-inicio.component";
 
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [TablaProductosComponent],
+  imports: [ProductosInicioComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })
