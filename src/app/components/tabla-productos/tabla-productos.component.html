@@ -16,7 +16,7 @@
 </div>
 
 
-  @if (vistaGaleria) {
+  @if (vistaGaleria ) {
     <div class="card-container">
       @for (item of filtrarPorColor(ropa, busqueda); track item) {
         <div class="card" [ngClass]="{ 'modo-nocturno': modoNocturno }">
@@ -30,27 +30,28 @@
         </div>
       }
     </div>
+  } @else {
+    <table class="table" [ngClass]="{ 'modo-nocturno': modoNocturno }">
+      <thead>
+        <tr>
+          <th>{{ modoEspanol ? 'Imagen' : 'Image' }}</th>
+          <th>{{ modoEspanol ? 'Precio' : 'Price' }}</th>
+          <th>{{ modoEspanol ? 'Talla' : 'Size' }}</th>
+          <th>{{ modoEspanol ? 'Material' : 'Material' }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filtrarPorColor(ropa, busqueda); trackBy: trackByFn">
+          <td><img src="{{item.imagen}}" alt="Imagen" style="width: 100px;"></td>
+          <td>${{ item.precio }}</td>
+          <td>{{ item.talla }}</td>
+          <td>{{ item.material }}</td>
+          <td><button class="btn btn-primary" [routerLink]="['/detalles', item.id]">{{ modoEspanol ? 'Ver más detalles' : 'See details' }}</button></td>
+        </tr>
+      </tbody>
+    </table>
   }
 
 
-<ng-template #tablaView>
-  <table class="table" [ngClass]="{ 'modo-nocturno': modoNocturno }">
-    <thead>
-      <tr>
-        <th>{{ modoEspanol ? 'Imagen' : 'Image' }}</th>
-        <th>{{ modoEspanol ? 'Precio' : 'Price' }}</th>
-        <th>{{ modoEspanol ? 'Talla' : 'Size' }}</th>
-        <th>{{ modoEspanol ? 'Material' : 'Material' }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of filtrarPorColor(ropa, busqueda); trackBy: trackByFn">
-        <td><img src="{{item.imagen}}" alt="Imagen" style="width: 100px;"></td>
-        <td>${{ item.precio }}</td>
-        <td>{{ item.talla }}</td>
-        <td>{{ item.material }}</td>
-        <td><button class="btn btn-primary" [routerLink]="['/detalles', item.id]">{{ modoEspanol ? 'Ver más detalles' : 'See details' }}</button></td>
-      </tr>
-    </tbody>
-  </table>
-</ng-template>
+
+

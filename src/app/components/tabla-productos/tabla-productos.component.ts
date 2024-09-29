@@ -34,19 +34,19 @@ export class TablaProductosComponent {
 
   busqueda: any;
   cambiarModo() {
-    // Alternar entre modos
+
     this.modoNocturno = !this.modoNocturno;
     this.vistaGaleria = !this.vistaGaleria;
     this.modoEspanol = !this.modoEspanol;
   }
-   // Filtro personalizado por color
+
    filtrarPorColor(ropa: any[], color: string): any[] {
     if (!ropa || !color) {
-      return ropa; // Si no hay color seleccionado, mostrar todos los productos
+      return ropa;
     }
     return ropa.filter(item => item.color.toLowerCase() === color.toLowerCase());
   }
-   // Función para el trackBy en el ngFor (mejora el rendimiento)
+
    trackByFn(index: number, item: any) {
     return item.id;
   }
